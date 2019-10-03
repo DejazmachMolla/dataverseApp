@@ -1,0 +1,14 @@
+<h3>
+  {{dataset?.name}}
+</h3>
+<p>
+  {{dataset?.published_at | date}}
+</p>
+<p class="description">
+  {{dataset?.description | summary:300 }}
+</p>
+<a  style="font-size:1.2em" href="{{dataset?.url}}" target="_blank">
+  <i class="material-icons custom-color">
+    visibility
+    </i>
+</a>

@@ -1,0 +1,32 @@
+:host {
+    display: block;
+    margin-top: 130px;
+    padding: 1em 2em;
+}
+.orderBy, .ascDes {
+    z-index: 100;
+}
+@media(min-width : 768px) {
+    .datasets {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    }
+    .datasets >li {
+        margin-right: .5em;
+    }
+}
+.error {
+    background-color: rgba(255, 38, 0, 0.932);
+    padding: 1em;
+    border-radius: 3px;
+    margin-top: 1em;
+}
+.progressContainer {
+    margin: auto;
+}
+.foundItems {
+    padding: .5em;
+    border-radius: 3px;
+    margin-top: 1em;
+    color: rgba(54, 173, 7, 0.932);
+}

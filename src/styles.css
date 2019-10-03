@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "https://fonts.googleapis.com/css?family=Roboto:300,400,500";
+a {
+    text-decoration: none;
+    
+}
+a:hover, button:hover {
+    cursor: pointer;
+}
+.btn:focus,.btn:active, button:active, button:focus {
+    outline: none !important;
+    box-shadow: none;
+}
+body {
+    font-family: Arial, "Helvetica Neue", medium-content-serif-font, Helvetica, sans-serif
+    , 'Times New Roman', Times, serif;
+    font-size: 1em;
+    
+}
+
+.form-control.ng-touched.ng-invalid {
+    border: 2px solid red;
+}
+
+li {
+    list-style: none;
+}
+ul, li, body, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+
+.material-icons.custom-color { color: rgb(8, 59, 83)};

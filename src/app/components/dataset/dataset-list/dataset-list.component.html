@@ -1,0 +1,39 @@
+<form #f="ngForm" (ngSubmit)="getDatasets()">
+  <mat-form-field class="searchField">
+    <input matInput placeholder="Search Datasets" ngModel #searchText name="searchText" id="searchText" type="text"
+      [(ngModel)]=searchTextVal>
+  </mat-form-field>
+  <mat-form-field class="orderBy">
+    <mat-select placeholder="Sort By" id="orderBy" ngModel #orderBy name="orderBy" [(ngModel)]="sort">
+      <mat-option *ngFor="let orderBy of orderBys" [value]="orderBy.value">
+        {{orderBy.label}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="ascDes">
+    <mat-select placeholder="Order" id="ascDes" ngModel #ascDes name="ascDes" [(ngModel)]="order">
+      <mat-option *ngFor="let ascDes of ascDess" [value]="ascDes.value">
+        {{ascDes.label}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="searchButton">
+    <button mat-raised-button type="submit">
+      <i class="material-icons custom-color">search</i>Search
+    </button>
+  </div>
+</form>
+<h3 *ngIf="!loading && !fetchError && data" class="foundItems">{{data?.total_count}} results found</h3>
+<div *ngIf="!loading && fetchError" class="error">
+  <h1 *ngIf="!loading">Sorry please try searching again. Error encountered.</h1>
+</div>
+<mat-spinner *ngIf="loading" class="progressContainer"></mat-spinner>
+<ul *ngIf="!loading" class="datasets">
+  <li *ngFor="let datum of data?.items; let i = index">
+    <app-single-dataset [dataset]="datum">
+    </app-single-dataset>
+  </li>
+</ul>
+
+<mat-paginator *ngIf="data" #paginator [pageIndex]="start" [length]="length" [pageSize]="perPage"
+  [pageSizeOptions]="pageSizes" (page)="onPage($event)"></mat-paginator>
