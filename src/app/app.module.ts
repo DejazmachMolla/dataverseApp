@@ -1,3 +1,4 @@
+import { DatasetDetailComponent } from './components/dataset/dataset-detail/dataset-detail.component';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { BrowserModule }            from '@angular/platform-browser';
 import { FormsModule }              from '@angular/forms';
@@ -7,7 +8,6 @@ import { AppComponent }             from './app.component';
 import { NavBarComponent }          from './components/nav-bar/nav-bar.component';
 import { AppRoutingModule }         from './app.routing';
 import { HttpModule } from '@angular/http';
-import { FlashMessageModule} from 'angular-flash-message';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { MaterialModule } from './material.module';
@@ -29,6 +29,7 @@ import { DatasetService } from './services/dataset/dataset.service';
     NavBarComponent,
     DatasetListComponent,
     SingleDatasetComponent,
+    DatasetDetailComponent,
     SummaryPipe
   ],
   imports: [
@@ -38,7 +39,6 @@ import { DatasetService } from './services/dataset/dataset.service';
     MaterialModule,
     BrowserAnimationsModule,
     HttpModule,
-    FlashMessageModule,
     AngularFontAwesomeModule,
     MaterialModule,
     HttpClientModule,
