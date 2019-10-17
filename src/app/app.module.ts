@@ -57,7 +57,6 @@ import { DatasetService } from './services/dataset/dataset.service';
     ColorPickerModule
   ],
   providers: [
-    JwtHelperService,
     DatasetService
   ],
   bootstrap: [AppComponent]
